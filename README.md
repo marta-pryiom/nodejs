@@ -1,3 +1,6 @@
+скрін1:
+https://ibb.co/68YcRmx
+
 Домашнее задание 1
 Шаг 1
 Инициализируй npm в проекте
@@ -17,26 +20,27 @@
 Сделай экспорт созданных функций через module.exports
 // contacts.js
 
-/*
- * Раскомментируй и запиши значение
- * const contactsPath = ;
- */
+/\*
+
+- Раскомментируй и запиши значение
+- const contactsPath = ;
+  \*/
 
 // TODO: задокументировать каждую функцию
 function listContacts() {
-  // ...твой код
+// ...твой код
 }
 
 function getContactById(contactId) {
-  // ...твой код
+// ...твой код
 }
 
 function removeContact(contactId) {
-  // ...твой код
+// ...твой код
 }
 
 function addContact(name, email, phone) {
-  // ...твой код
+// ...твой код
 }
 Шаг 3
 Сделай импорт модуля contacts.js в файле index.js и проверь работоспособность функций для работы с контактами.
@@ -49,10 +53,10 @@ const argv = require('yargs').argv;
 
 // TODO: рефакторить
 function invokeAction({ action, id, name, email, phone }) {
-  switch (action) {
-    case 'list':
-      // ...
-      break;
+switch (action) {
+case 'list':
+// ...
+break;
 
     case 'get':
       // ... id
@@ -68,7 +72,8 @@ function invokeAction({ action, id, name, email, phone }) {
 
     default:
       console.warn('\x1B[31m Unknown action type!');
-  }
+
+}
 }
 
 invokeAction(argv);
@@ -77,11 +82,11 @@ invokeAction(argv);
 const { Command } = require('commander');
 const program = new Command();
 program
-  .option('-a, --action <type>', 'choose action')
-  .option('-i, --id <type>', 'user id')
-  .option('-n, --name <type>', 'user name')
-  .option('-e, --email <type>', 'user email')
-  .option('-p, --phone <type>', 'user phone');
+.option('-a, --action <type>', 'choose action')
+.option('-i, --id <type>', 'user id')
+.option('-n, --name <type>', 'user name')
+.option('-e, --email <type>', 'user email')
+.option('-p, --phone <type>', 'user phone');
 
 program.parse(process.argv);
 
@@ -89,10 +94,10 @@ const argv = program.opts();
 
 // TODO: рефакторить
 function invokeAction({ action, id, name, email, phone }) {
-  switch (action) {
-    case 'list':
-      // ...
-      break;
+switch (action) {
+case 'list':
+// ...
+break;
 
     case 'get':
       // ... id
@@ -108,7 +113,8 @@ function invokeAction({ action, id, name, email, phone }) {
 
     default:
       console.warn('\x1B[31m Unknown action type!');
-  }
+
+}
 }
 
 invokeAction(argv);
@@ -116,15 +122,19 @@ invokeAction(argv);
 Запусти команды в терминале и сделай отдельный скриншот результата выполнения каждой команды.
 
 # Получаем и выводим весь список контактов в виде таблицы (console.table)
+
 node index.js --action list
 
 # Получаем контакт по id
+
 node index.js --action get --id 5
 
 # Добавялем контакт
+
 node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
 
 # Удаляем контакт
+
 node index.js --action remove --id=3
 Шаг 6 - Сдача домашнего задания.
 Скриншоты выполнения команд, можно залить на любой бесплатный облачный сервис хранения картинок (Пример: monosnap, imgbb.com) и соответствующие ссылки необходимо добавить в файл README.md. Создайте этот файл в корне проекта. После прикрепите ссылку на репозиторий с домашним заданием в schoology для проверки ментором.
